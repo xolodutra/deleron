@@ -1,0 +1,5 @@
+AuthType Basic
+AuthName "wtf??"
+AuthBasicProvider file
+AuthUserFile "C:/Program Files (x86)/Apache Software Foundation/Apache2.2/boltclient"
+Require valid-user

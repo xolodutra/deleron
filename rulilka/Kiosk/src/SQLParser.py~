@@ -1,0 +1,74 @@
+#!/usr/bin/env python
+
+import SQLWorker
+from configs import debug
+
+qGetNoteState = "SELECT id, ip, lifepercent, lastupdate, state, broken FROM computers ORDER BY id"
+
+lockQuery = "UPDATE computers SET state=2 WHERE id=%d" 
+setStateQuery = "UPDATE computers SET state=%d WHERE id=%d"
+unlockQuery = "UPDATE computers SET state=1 WHERE id=%d"
+
+setBrokenQuery = "UPDATE computers SET broken=1 WHERE id=%d"
+unsetBrokenQuery = "UPDATE computers SET broken=0 WHERE id=%d" 
+
+getTimeQuery = "SELECT lastupdate FROM computers WHERE id=%d"
+
+class LogParser(object):
+    def __init__(self, filename=''):
+        self.worker=SQLWorker.SQLWorker()
+        
+        
+    def parse(self):
+        dbData = self.worker.execute(qGetNoteState)
+        if debug: print "DB data in SQLParser:\n", dbData
+        
+        #print self.noteNames
+        #self.noteNames = self.parser.sections()
+        self.notes = {}
+        
+        for i, noteState in enumerate(dbData):
+            currNote = {}
+            currNote["last_ping"] = noteState[3]
+            currNote["batt"] = noteState[2]
+            currNote["state"] = noteState[4]
+            currNote["ip"] = noteState[1]
+            currNote["name"] = '%02d' % int(noteState[1].split('.')[-1]) # last number in IP
+            currNote["broken"] = noteState[5]
+            currNote["id"] = noteState[0]
+            
+            self.notes[currNote["name"]] = currNote
+        self.noteNames = self.notes.keys()
+            
+    def SetUseReturnOldTime(self, _id, use, state=None):
+        if (state): 
+            q = setStateQuery % (state, _id)
+        else:
+            if (use):
+                q = unlockQuery % (_id,)
+            else:
+                q = lockQuery % (_id,)
+        self.worker.execute(q)
+        return self.worker.execute(getTimeQuery % (_id,))[0][0]
+        
+    def SetBroken(self, _id, broken):
+        if (broken):
+            q = setBrokenQuery % (_id,)
+        else:
+            q = unsetBrokenQuery % (_id,)
+        if debug:
+            print q
+        self.worker.execute(q)
+        
+    #    
+    #def ReadNotesCnt(self):
+    #    res = 10
+    #    
+    #    return res
+    #
+    #def ReadNoteState(self, noteNum):
+    #    state = {'works': True, 'inuse': False,
+    #             'time': 0, 'batt': 100}
+    #    return state
+    #
+    #def ReadNotesNames(self):

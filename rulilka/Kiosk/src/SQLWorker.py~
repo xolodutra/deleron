@@ -1,0 +1,22 @@
+#!/usr/bin/env python
+import MySQLdb as DB
+
+db_host = "localhost"
+db_name = "NoteDB"
+db_user = "root"
+db_pwd = "1234567"
+
+class ParsingError(Exception): pass
+
+class SQLWorker(object):
+    def __init__(self):
+        try:
+            self.db = DB.connect(host=db_host, user = db_user, passwd = db_pwd,
+                                 db=db_name)
+            self.curr = self.db.cursor()
+        except  DB.Error, e:
+            raise ParsingError(e)
+            
+    def execute(self, query):
+        self.curr.execute(query)
+        return self.curr.fetchall()

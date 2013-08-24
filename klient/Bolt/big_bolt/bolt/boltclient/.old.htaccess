@@ -1,0 +1,5 @@
+AuthType Basic
+AuthName "wtf??"
+AuthBasicProvider file
+AuthUserFile /etc/apache2/auth/supermega
+Require valid-user

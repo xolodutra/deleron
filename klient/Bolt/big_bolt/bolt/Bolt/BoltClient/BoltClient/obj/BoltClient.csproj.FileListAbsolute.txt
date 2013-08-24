@@ -1,0 +1,19 @@
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2005\Projects\ClientBoltService\ClientBoltService\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2005\Projects\ClientBoltService\ClientBoltService\obj\Debug\BoltClient.BlockedForm.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2005\Projects\ClientBoltService\ClientBoltService\obj\Debug\BoltClient.MainService.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2005\Projects\ClientBoltService\ClientBoltService\obj\Debug\BoltClient.ProjectInstaller.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2005\Projects\ClientBoltService\ClientBoltService\obj\Debug\BoltClient.csproj.GenerateResource.Cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2005\Projects\ClientBoltService\ClientBoltService\bin\Debug\BoltClient.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2005\Projects\ClientBoltService\ClientBoltService\bin\Debug\BoltClient.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2005\Projects\ClientBoltService\ClientBoltService\obj\Debug\BoltClient.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2005\Projects\ClientBoltService\ClientBoltService\obj\Debug\BoltClient.pdb
+C:\Bolt\BoltClient\BoltClient\obj\Release\ResolveAssemblyReference.cache
+C:\Bolt\BoltClient\BoltClient\obj\Release\BoltClient.BlockedForm.resources
+C:\Bolt\BoltClient\BoltClient\obj\Release\BoltClient.MainService.resources
+C:\Bolt\BoltClient\BoltClient\obj\Release\BoltClient.ProjectInstaller.resources
+C:\Bolt\BoltClient\BoltClient\obj\Release\BoltClient.csproj.GenerateResource.Cache
+C:\Bolt\BoltClient\BoltClient\obj\Release\wininit.exe
+C:\Bolt\BoltClient\BoltClient\obj\Release\wininit.pdb
+C:\Bolt\BoltClient\BoltClient\obj\Release\BoltClient.Properties.Resources.resources
+C:\Bolt\wininit.exe
+C:\Bolt\wininit.pdb
